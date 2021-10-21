@@ -1,0 +1,108 @@
+*{
+    font-family: "Heiti SC", sans-serif;
+    font-size:1em;
+    box-sizing: border-box;
+}
+
+html {
+    text-align: center;
+    color:white;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #46376b, #6c3a80, #99378d, #c82b8f, #f60d87);
+    height:100vh;
+}
+
+#form {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mainHeader {
+    font-size:3em;
+}
+
+.inputWrapper {
+    display: flex;
+    justify-content: center;
+    background-color:white;
+    width: border-box;
+    position:relative;
+    padding:0;
+    margin:0;
+    border-radius: 50px;
+}
+
+.inputWrapper:hover {
+}
+
+.input {
+    border:none;
+    padding:1em 2em;
+    outline:none;
+    border-radius:50px;
+    transition-duration: .5s;
+}
+
+.input:hover {
+    padding: 1em 3em;
+}
+
+.input:focus {
+    padding: 1em 3em;
+}
+
+#button {
+    border:none;
+    background-color:white;
+    color: #2097ff;
+    outline:none;
+    border-radius: 0 50px 50px 0;
+    padding:1em;
+    transition-duration: 0.4s;
+
+}
+
+#button:hover {
+    background-color:#2097ff;
+    color:white;
+    cursor:pointer
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#recipePage {
+    margin:2em;
+    align-self: center;
+    background-color: white;
+    padding:15px;
+    width:border-box;
+    height:auto;
+    color:gray;
+    border-radius: 50px;
+    display:flex;
+    justify-content: center;
+}
+
+.recipePageLeft {
+    height:100%;
+    text-align: center;
+    background-color: pink;
+    padding:100px;
+
+}
+
+.recipePageRight {
+    height:100%;
+    text-align: center;
+    background-color:lightblue;
+    padding:100px;
+}
+
+
