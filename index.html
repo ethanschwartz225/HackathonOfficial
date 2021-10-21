@@ -1,37 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cocktail Library</title>
     <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
 <header>
-    <h1 style="font-size:3em;">Cocktail Library</h1>
+    <h1 class="mainHeader">Cocktail Library</h1>
 </header>
-<section class="container">
-    <section class="myIngredients">
-        <h1 class="subHeaderIngredients">Ingredients</h1>
-        <ul id="ingredientList"></ul>
-    </section>
+
+<form class="form" id="form">
+    <div class="inputWrapper">
+        <label for="input"></label>
+        <input type="text" class="input" id="input" placeholder="Enter ingredient">
+        <button id="button" class="button">Add</button>
+    </div>
     
-    <section class="addRecipe">
-            <h1 class="subHeader">Create a Cocktail</h1>
-        <form class="form">
-            <div class="formWrapper">
-                <label for="ingredient"></label>
-                <input type="text" class="ingredient" id="ingredient" placeholder="Enter Ingredient">
-                <button class="enter" id="enter">Add Ingredient</button>
-            </div>
-            
-                <div class="addedRecipe" >
-                    <div class="addedIngredients" >
-                        <div class="myCocktail" id="myCocktail"></div>
-                    </div>
-                </div>
-        </form>
-    </section>
-</section>
+    <div class="cocktailContainer" id="cocktailContainer">
+    
+    </div>
+</form>
+
+
+
+
 
 <script src="script.js"></script>
 </body>
