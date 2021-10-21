@@ -58,6 +58,8 @@ tomatojuice = {
 let input = document.getElementById("input");
 let button = document.getElementById("button");
 let ingredientList = document.getElementById("ingredientList");
+let deleteButton = document.createElement("input");
+let addButton = document.createElement("input");
 
 button.addEventListener("click", addToList);
 button.addEventListener("click", addToCup);
@@ -66,10 +68,29 @@ function addToList(event) {
     event.preventDefault()
     let newIngredient = document.createElement("h3");
     newIngredient.append(input.value);
-    ingredientList.appendChild(newIngredient)
+    ingredientList.appendChild(newIngredient);
+    input.value = "";
+
+    //  creates button to add an item to recipe list again
+        newIngredient.appendChild(addButton);
+            addButton.setAttribute("type", "button");
+            addButton.setAttribute("value", "Add");
+            addButton.classList.add("addButton");
+
+    //  creates button to omit an item from recipe list
+        newIngredient.appendChild(deleteButton);
+            deleteButton.setAttribute("type", "button");
+            deleteButton.setAttribute("value", "Delete");
+            deleteButton.classList.add("deleteButton");
+            deleteButton.addEventListener("click", function(event){
+                newIngredient.remove()
+            })
+
+
 }
 
 function addToCup(event){
     event.preventDefault();
+
 }
 

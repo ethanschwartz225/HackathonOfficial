@@ -88,21 +88,46 @@ body {
     border-radius: 50px;
     display:flex;
     justify-content: center;
+    min-height: 26em;
 }
 
 .recipePageLeft {
-    height:100%;
+    height:auto;
     text-align: center;
-    background-color: pink;
-    padding:100px;
-
+    padding:0 6em;
+    border-right:1px solid lightgray;
 }
 
 .recipePageRight {
-    height:100%;
+    height:auto;
     text-align: center;
-    background-color:lightblue;
-    padding:100px;
+    padding:0 6em;
 }
 
+.pageHeader {
+    font-size:1.5em;
+    border-bottom:1px solid skyblue;
+}
 
+.deleteButton {
+    background-color:white;
+    border: none;
+    color: #ff7b7b;
+    outline:none;
+    position: relative;
+    right:0;
+}
+
+.addButton {
+    background-color:white;
+    border: none;
+    color: skyblue;
+    outline:none;
+    position: relative;
+    right:0;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+}
