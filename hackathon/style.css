@@ -118,6 +118,10 @@ body {
     right:0;
 }
 
+.deleteButton:hover {
+    cursor:pointer;
+}
+
 .addButton {
     background-color:white;
     border: none;
@@ -125,6 +129,10 @@ body {
     outline:none;
     position: relative;
     right:0;
+}
+
+.addButton {
+    cursor:pointer;
 }
 
 h3 {
