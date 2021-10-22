@@ -53,18 +53,19 @@ tomatojuice = {
     color:"red",
     matter:"liquid"
 }
-//
-
+//id's all input components
 let input = document.getElementById("input");
 let button = document.getElementById("button");
 let ingredientList = document.getElementById("ingredientList");
 let deleteButton = document.createElement("input");
 let addButton = document.createElement("input");
-let itemCount = document.createElement("p");
 
+//creates count for list item *****needs to count each item, individually****
+let itemCount = document.createElement("p");
 itemCount = 1;
 
 
+// add event listeners to input --> adds to ingredientList
 button.addEventListener("click", addToList);
 button.addEventListener("click", addToCup);
 
@@ -74,31 +75,31 @@ function addToList(event) {
         let newIngredient = document.createElement("h3");
         newIngredient.append(input.value);
         ingredientList.appendChild(newIngredient);
-        input.value = "";
+            input.value = "";
 
-        //  creates button to add an item to recipe list again
-        newIngredient.appendChild(addButton);
+//  creates buttons to add/omit an item to/from recipe list again
+    newIngredient.appendChild(addButton);
         addButton.setAttribute("type", "button");
         addButton.setAttribute("value", "Add");
         addButton.classList.add("addButton");
 
-        addButton.addEventListener("click", function () {
-            itemCount += 1;
-            console.log(itemCount);
-        })
-
-        //  creates button to omit an item from recipe list
-        newIngredient.appendChild(deleteButton);
+    newIngredient.appendChild(deleteButton);
         deleteButton.setAttribute("type", "button");
         deleteButton.setAttribute("value", "Delete");
         deleteButton.classList.add("deleteButton");
 
-        deleteButton.addEventListener("click", function () {})
+// Event listeners for both add and delete buttons
+        addButton.addEventListener("click", function() {
+            itemCount += 1;
+            console.log(itemCount);
+        })
+
+        deleteButton.addEventListener("click", function() {
+            itemCount -= 1;
+            console.log(itemCount);
+        })
     }
 }
-
-
-
 
 function addToCup(event){
     event.preventDefault();
