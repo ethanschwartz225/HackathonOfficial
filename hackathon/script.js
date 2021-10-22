@@ -1,108 +1,41 @@
-// Extensive List of ingredients;
-applejuice = {
-    color:"yellow",
-    matter:"liquid",
-}
+// cocktails =  {drinks: [
+//     {color: "orange", drink: "orange juice"},
+//     {color: "yellow", drink: "apple juice"},
+//     {color: "white", drink: "milk"},
+//     {color: "brown", drink: "coffee"},
+//     {color: "gold", drink: "red bull"},
+//     {color: "blue", drink: "water"},
+//     {color: "red", drink: "tomato juice"},
+//     {color: "purple", drink: "prune juice"}
+// ]}
 
-orangejuice = {
-    color:"orange",
-    matter: "liquid",
-}
-
-ice = {
-    color:"lightgray",
-    matter:"solid",
-}
-
-vodka = {
-    color:"white",
-    matter:"liquid",
-}
-
-whiskey = {
-    color:"brown",
-    matter:"liquid",
-}
-
-tequila = {
-    color:"white",
-    matter:"liquid",
-}
-
-coke = {
-    color:"brown",
-    matter:"liquid",
-}
-
-lime = {
-    color:"green",
-    matter:"solid",
-}
-
-orange = {
-    color:"orange",
-    matter:"solid",
-}
-
-redbull = {
-    color:"gold",
-    matter:"liquid",
-}
-
-tomatojuice = {
-    color:"red",
-    matter:"liquid"
-}
-//id's all input components
+// id's all input components
 let input = document.getElementById("input");
 let button = document.getElementById("button");
-let ingredientList = document.getElementById("ingredientList");
-let deleteButton = document.createElement("input");
-let addButton = document.createElement("input");
 
-//creates count for list item *****needs to count each item, individually****
-let itemCount = document.createElement("p");
-itemCount = 1;
+button.addEventListener("click", nameDrink);
 
-
-// add event listeners to input --> adds to ingredientList
-button.addEventListener("click", addToList);
-button.addEventListener("click", addToCup);
-
-function addToList(event) {
+function nameDrink(event){
     event.preventDefault()
-    if (input.value.length > 0) {
-        let newIngredient = document.createElement("h3");
-        newIngredient.append(input.value);
-        ingredientList.appendChild(newIngredient);
-            input.value = "";
-
-//  creates buttons to add/omit an item to/from recipe list again
-    newIngredient.appendChild(addButton);
-        addButton.setAttribute("type", "button");
-        addButton.setAttribute("value", "Add");
-        addButton.classList.add("addButton");
-
-    newIngredient.appendChild(deleteButton);
-        deleteButton.setAttribute("type", "button");
-        deleteButton.setAttribute("value", "Delete");
-        deleteButton.classList.add("deleteButton");
-
-// Event listeners for both add and delete buttons
-        addButton.addEventListener("click", function() {
-            itemCount += 1;
-            console.log(itemCount);
-        })
-
-        deleteButton.addEventListener("click", function() {
-            itemCount -= 1;
-            console.log(itemCount);
-        })
+    let something = document.getElementById("cocktailHeader");
+    something.innerHTML = input.value
     }
+
+    drinks = [
+        "Redbull",
+        "Apple Juice",
+        "Orange Juice",
+        "Vodka",
+        "Tequila",
+        "Tomato Juice",
+        "Rum",
+        "Whiskey",
+        "Arak",
+    ]
+
+for(let i = 0; i < drinks.length; i++){
+    let drinkItem = document.createElement("h3");
+    let ingredientList = document.getElementById("ingredientList");
+    drinkItem.innerText = drinks[i];
+    ingredientList.appendChild(drinkItem);
 }
-
-function addToCup(event){
-    event.preventDefault();
-
-}
-

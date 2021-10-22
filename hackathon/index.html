@@ -7,13 +7,13 @@
 </head>
 <body>
 <header>
-    <h1 class="mainHeader">Cocktail Library</h1>
+    <h1 class="mainHeader">Drink Library</h1>
 </header>
 <section class="container">
     <form class="form" id="form">
         <div class="inputWrapper">
             <label for="input"></label>
-            <input type="text" class="input" id="input" placeholder="Enter ingredient">
+            <input type="text" class="input" id="input" placeholder="Enter Drink Name">
             <button id="button" class="button">Add</button>
         </div>
     </form>
@@ -28,11 +28,14 @@
 
         <section class="recipePageRight">
             <div class="recipePageSub">
-                <h1 class="pageHeader">My Cocktail</h1>
+                <h1 class="pageHeader cocktailHeader" id="cocktailHeader">My Cocktail</h1>
+                <div class="cup"></div>
             </div>
         </section>
     </section>
 </section>
+
+<button id="submitDrink">Submit Drink</button>
 
 <script src="script.js"></script>
 </body>

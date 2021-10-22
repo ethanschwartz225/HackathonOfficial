@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-image: linear-gradient(to bottom, #46376b, #6c3a80, #99378d, #c82b8f, #f60d87);
+    background-image: linear-gradient(to bottom, #46376b, #6c3a80, #8b1974, #bb5656, #f60d87);
     height:100vh;
 }
 
@@ -138,4 +138,57 @@ body {
 h3 {
     display: flex;
     justify-content: center;
+}
+
+.cup {
+    width: 15vw;
+    height: 250px;
+    border: 1px solid lightgray;
+    /* needs to be added in dom with
+    responsive variable for color selection */
+    background: orange;
+    border-radius:  0 0 50px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cup::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cup::after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    border-radius: 45%;
+    height: 175%;
+    width: 200%;
+    background: white;
+    animation: spin 6s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0%{
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100%) rotate(300deg)
+        }
+}
+
+#submitDrink {
+    padding:1em 8em;
+    border-radius:100px;
+    border:none;
+    background-color:white;
+    outline:none;
+    transition-duration: 0.3s;
+}
+
+#submitDrink:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
