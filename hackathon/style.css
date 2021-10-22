@@ -109,32 +109,6 @@ body {
     border-bottom:1px solid #2097ff;
 }
 
-.deleteButton {
-    background-color:white;
-    border: none;
-    color: #ff7b7b;
-    outline:none;
-    position: relative;
-    right:0;
-}
-
-.deleteButton:hover {
-    cursor:pointer;
-}
-
-.addButton {
-    background-color:white;
-    border: none;
-    color: #2097ff;
-    outline:none;
-    position: relative;
-    right:0;
-}
-
-.addButton {
-    cursor:pointer;
-}
-
 h3 {
     display: flex;
     justify-content: center;
@@ -186,9 +160,22 @@ h3 {
     background-color:white;
     outline:none;
     transition-duration: 0.3s;
+    color:gray;
+    font-weight: bold;
 }
 
 #submitDrink:hover {
     transform: scale(1.1);
     cursor: pointer;
+    color:#2097ff;
+}
+
+.ingredientName {
+    transition-duration: 0.3s;
+}
+
+.ingredientName:hover{
+    cursor:pointer;
+    color:#2097ff;
+    transform: scale(1.3);
 }

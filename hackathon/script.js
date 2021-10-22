@@ -1,14 +1,3 @@
-// cocktails =  {drinks: [
-//     {color: "orange", drink: "orange juice"},
-//     {color: "yellow", drink: "apple juice"},
-//     {color: "white", drink: "milk"},
-//     {color: "brown", drink: "coffee"},
-//     {color: "gold", drink: "red bull"},
-//     {color: "blue", drink: "water"},
-//     {color: "red", drink: "tomato juice"},
-//     {color: "purple", drink: "prune juice"}
-// ]}
-
 // id's all input components
 let input = document.getElementById("input");
 let button = document.getElementById("button");
@@ -33,9 +22,31 @@ function nameDrink(event){
         "Arak",
     ]
 
-for(let i = 0; i < drinks.length; i++){
+for(let i = 0; i < drinks.length; i++) {
     let drinkItem = document.createElement("h3");
     let ingredientList = document.getElementById("ingredientList");
     drinkItem.innerText = drinks[i];
     ingredientList.appendChild(drinkItem);
+    drinkItem.classList.add("ingredientName");
+    drinkItem.addEventListener("click", addToRecipeArray);
 }
+
+let recipeArray = [];
+
+function addToRecipeArray(event){
+    event.preventDefault();
+    recipeArray.push(event.target.textContent);
+    // console.log(event.target.textContent);
+}
+
+let submitDrink = document.getElementById("submitDrink");
+submitDrink.addEventListener("click", logDrink);
+
+function logDrink(event){
+    event.preventDefault();
+    let newOrder = recipeArray;
+    console.log(newOrder);
+    recipeArray = [];
+}
+
+
