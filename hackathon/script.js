@@ -1,3 +1,55 @@
+
+// id's all input components
+let input = document.getElementById("input");
+let button = document.getElementById("button");
+
+button.addEventListener("click", nameDrink);
+
+function nameDrink(event){
+    event.preventDefault()
+    let something = document.getElementById("cocktailHeader");
+    something.innerHTML = input.value
+    }
+
+    drinks = [
+        "Redbull",
+        "Apple Juice",
+        "Orange Juice",
+        "Vodka",
+        "Tequila",
+        "Tomato Juice",
+        "Rum",
+        "Whiskey",
+        "Arak",
+    ]
+
+for(let i = 0; i < drinks.length; i++) {
+    let drinkItem = document.createElement("h3");
+    let ingredientList = document.getElementById("ingredientList");
+    drinkItem.innerText = drinks[i];
+    ingredientList.appendChild(drinkItem);
+    drinkItem.classList.add("ingredientName");
+    drinkItem.addEventListener("click", addToRecipeArray);
+}
+
+let recipeArray = [];
+
+function addToRecipeArray(event){
+    event.preventDefault();
+    recipeArray.push(event.target.textContent);
+    // console.log(event.target.textContent);
+}
+
+let submitDrink = document.getElementById("submitDrink");
+submitDrink.addEventListener("click", logDrink);
+
+function logDrink(event){
+    event.preventDefault();
+    let newOrder = recipeArray;
+    console.log(newOrder);
+    recipeArray = [];
+}
+
 // function addToCup(event){
 //     event.preventDefault();
 
@@ -9,40 +61,5 @@
 
 
 
-// let bgColor 
-// function getBgColor(){
-//    colorBg =  this.style.backgroundColor; 
-// }
-// let cocktails =  {drinks: [
-//     {color: "orange", drink: "orange juice"},
-//     {color: "yellow", drink: "apple juice"},
-//     {color: "white", drink: "milk"},
-//     {color: "brown", drink: "coffee"},
-//     {color: "gold", drink: "red bull"},
-//     {color: "blue", drink: "water"},
-//     {color: "red", drink: "tomato juice"},
-//     {color: "purple", drink: "prune juice"}
-// ]
-// }
-// let button = document.getElementById("button");
-// let ingredientList = document.getElementById("ingredientList");
-// let deleteButton = document.createElement("input");
-// let addButton = document.createElement("input");
-// let input = document.getElementById("input");
-// let ul = document.createElement("ul")
-
-// let drinkinput = cocktails.drinks
-// let objKey = Object.keys(drinkinput)
-// let objValue = Object.values(drinkinput)
-// for (i=0; i < drinkinput.length; i++){
-//     ul.classList.add("listOfDrinks")
-//     let li = document.createElement("li")
-//     li.setAttribute("id", drinkinput[i].color)
-//     li.innerText = drinkinput[i].drink
-//     li.style.border = "1px solid black";
-//     li.classList.add("drinkColor");
-//     ul.appendChild(li)
-//     ingredientList.appendChild(ul)
-// }
 
 
