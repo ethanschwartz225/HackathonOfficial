@@ -43,7 +43,7 @@ body {
     padding:1em 2em;
     outline:none;
     border-radius:50px;
-    transition-duration: .5s;
+    transition-duration: .4s;
 }
 
 .input:hover {
@@ -62,13 +62,13 @@ body {
     border-radius: 0 50px 50px 0;
     padding:1em;
     transition-duration: 0.4s;
-
 }
 
 #button:hover {
     background-color:#2097ff;
     color:white;
-    cursor:pointer
+    cursor:pointer;
+    padding:1em 2em
 }
 
 .container {
@@ -106,7 +106,7 @@ body {
 
 .pageHeader {
     font-size:1.5em;
-    border-bottom:1px solid skyblue;
+    border-bottom:1px solid #2097ff;
 }
 
 .deleteButton {
@@ -125,7 +125,7 @@ body {
 .addButton {
     background-color:white;
     border: none;
-    color: skyblue;
+    color: #2097ff;
     outline:none;
     position: relative;
     right:0;
