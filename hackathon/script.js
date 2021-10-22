@@ -1,3 +1,4 @@
+
 // id's all input components
 let input = document.getElementById("input");
 let button = document.getElementById("button");
@@ -48,5 +49,17 @@ function logDrink(event){
     console.log(newOrder);
     recipeArray = [];
 }
+
+// function addToCup(event){
+//     event.preventDefault();
+
+// }
+
+
+
+
+
+
+
 
 
