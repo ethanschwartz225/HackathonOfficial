@@ -1,14 +1,15 @@
-
 // id's all input components
 let input = document.getElementById("input");
 let button = document.getElementById("button");
+let orderContainer = document.getElementById("orderContainer")
 
 button.addEventListener("click", nameDrink);
 
 function nameDrink(event){
     event.preventDefault()
-    let something = document.getElementById("cocktailHeader");
-    something.innerHTML = input.value
+    let drinkHeader = document.getElementById("cocktailHeader");
+    drinkHeader.innerHTML = input.value;
+    input.value = "";
     }
 
     drinks = [
@@ -17,10 +18,12 @@ function nameDrink(event){
         "Orange Juice",
         "Vodka",
         "Tequila",
-        "Tomato Juice",
         "Rum",
         "Whiskey",
         "Arak",
+        "Coke",
+        "Soda",
+        "Ice"
     ]
 
 for(let i = 0; i < drinks.length; i++) {
@@ -32,34 +35,53 @@ for(let i = 0; i < drinks.length; i++) {
     drinkItem.addEventListener("click", addToRecipeArray);
 }
 
+let orderList = [];
 let recipeArray = [];
+
+orderContainer = document.getElementById(orderContainer);
 
 function addToRecipeArray(event){
     event.preventDefault();
     recipeArray.push(event.target.textContent);
+    console.log(event.target.textContent);
     // console.log(event.target.textContent);
+    event.target.style.color = "#43a7ff";
+    document.getElementById("submitDrink").addEventListener("click", function(){
+        event.target.style.color = "gray";
+    })
 }
 
 let submitDrink = document.getElementById("submitDrink");
 submitDrink.addEventListener("click", logDrink);
+submitDrink.addEventListener("click", clearInput);
 
 function logDrink(event){
     event.preventDefault();
-    let newOrder = recipeArray;
-    console.log(newOrder);
+    orderList.push(recipeArray)
+    console.log(recipeArray);
+    console.log(orderList);
+
+let newOrder = document.createElement("div");
+newOrder.classList.add("newOrder")
+document.getElementById("orderContainer").appendChild(newOrder);
+
+let drinkHeader = document.getElementById("cocktailHeader");
+
+let orderName = document.createElement("h1")
+orderName.innerText = drinkHeader.innerText;
+newOrder.appendChild(orderName);
+orderName.classList.add("orderHeader")
+
+for(let i = 0; i < recipeArray.length; i++) {
+    let orderRecipe = document.createElement("h4");
+    orderRecipe.innerText += recipeArray[i]
+    newOrder.appendChild(orderRecipe)
+    orderRecipe.classList.add("h4")
+}
     recipeArray = [];
 }
 
-// function addToCup(event){
-//     event.preventDefault();
-
-// }
-
-
-
-
-
-
-
-
-
+function clearInput(){
+    input.value = "";
+    document.getElementById("cocktailHeader").textContent = "My Cocktail";
+}
